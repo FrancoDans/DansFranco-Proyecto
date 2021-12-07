@@ -1,9 +1,8 @@
 import React from "react";
 import BotitaAzul from "../../Imagenes/botitaazul.jpg";
 import { useHistory, Link } from "react-router-dom";
-
+import ContainerCount from "../../containers/CountContainer";
 export default function Producto2() {
-
   let history = useHistory();
 
   return (
@@ -19,10 +18,13 @@ export default function Producto2() {
         <p className="precio">$20.000</p>
       </div>
       <div className="buttom">
-        <button className="btn">Añadir al Carrito</button>
+        <Link to={"/cart"} className="btn">
+          Añadir al carrito
+        </Link>
         <button onClick={() => history.push("/2")} className="btn">
           Ver producto
         </button>
+        <ContainerCount />
       </div>
       <Link to={"/"} className="btn-volver">
         Volver

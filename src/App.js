@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import "boxicons";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import ItemList from './components/ItemList';
+import ContainerCount from './containers/CountContainer';
 import Producto1 from './Productos/Botines 11/producto1';
 import Producto2 from './Productos/Botines 11/producto2';
 import Producto3 from './Productos/Botines 11/producto3';
@@ -89,6 +90,10 @@ function App({NavbarVisible}) {
          <ProductoF6 />
         </Route>
        
+        
+        <Route exact path="/cart">
+        
+        </Route>
 
 
       </Switch>
