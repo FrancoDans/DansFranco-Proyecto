@@ -2,8 +2,18 @@ import React from "react";
 import NikeRyB from "../../Imagenes/nikeryb.jpg";
 import { useHistory, Link } from "react-router-dom";
 import ContainerCount from "../../containers/CountContainer";
-export default function Producto4() {
+export default function Producto4({item}) {
   let history = useHistory();
+
+  const {cart, addItem} = useContext(CartContext);
+
+  const onAdd = () => {
+    if(isInCart(item.id)){
+      alert(`El producto seleccionado ya se encuentra en el carrito`)
+    } else {
+      addItem(item)
+    }
+  }
   return (
     <div className="producto">
       <a href="#">

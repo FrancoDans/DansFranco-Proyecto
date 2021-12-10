@@ -18,13 +18,16 @@ import ProductoF4 from "./Productos/Botines Futsal/producto4";
 import ProductoF5 from "./Productos/Botines Futsal/producto5";
 import ProductoF6 from "./Productos/Botines Futsal/producto6";
 import ItemListFutsal from './components/ItemListFutsal';
-
+import CartProvider from "./context/CartContext"
 
 function App({NavbarVisible}) {
 
 
   return (
     <div className="App">
+     
+     <CartProvider> 
+     
       <Router>
 
       
@@ -98,6 +101,7 @@ function App({NavbarVisible}) {
 
       </Switch>
       </Router>
+      </CartProvider>
     </div>
   );
 }

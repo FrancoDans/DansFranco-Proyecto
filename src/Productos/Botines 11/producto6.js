@@ -2,8 +2,19 @@ import React from "react";
 import PumaAmarillos from "../../Imagenes/pumaamarillos.jfif";
 import { useHistory, Link } from "react-router-dom";
 import ContainerCount from "../../containers/CountContainer";
-export default function Producto6() {
+export default function Producto6({item}) {
+  
   let history = useHistory();
+
+  const {cart, addItem} = useContext(CartContext);
+
+  const onAdd = () => {
+    if(isInCart(item.id)){
+      alert(`El producto seleccionado ya se encuentra en el carrito`)
+    } else {
+      addItem(item)
+    }
+  }
   return (
     <div>
       <div className="producto">
